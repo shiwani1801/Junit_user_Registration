@@ -14,5 +14,9 @@ public class userReg {
         String lastName = scanner.next();
         System.out.println(validator.validateLastName(lastName));
 
+        System.out.println("Enter your email address: ");
+        String email = scanner.next();
+        System.out.println(validator.validateEmail(email));
+
     }
 }

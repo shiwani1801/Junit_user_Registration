@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class RegExTest {
 
+    RegExMain obj = new RegExMain();
+
     @BeforeClass
     public static void welcomeText() {
         System.out.println("Welcome to User Registration Problem");
@@ -57,5 +59,25 @@ public class RegExTest {
         System.out.println("Invalid last name of user which having only three characters");
         String lastName = "Ran";
         Assert.assertFalse(obj.validateLastName(lastName));
+    }
+    @Test
+    public void validateEmailTest() {
+        System.out.println("Valid email id of user");
+        String emailId = "sambit2024@gmail.com";
+        Assert.assertTrue(obj.validateEmail(emailId));
+    }
+
+    @Test
+    public void validateEmailWithoutDomainShouldFail() {
+        System.out.println("Invalid email id of user without domain");
+        String emailId = "sambit420";
+        Assert.assertFalse(obj.validateEmail(emailId));
+    }
+
+    @Test
+    public void validateEmailWithStartingFirstLetterCapitalShouldFail() {
+        System.out.println("Invalid email id of user having starting letter is capital");
+        String emailId = "Sambit 2024@gmail.com";
+        Assert.assertFalse(obj.validateEmail(emailId));
     }
 }
