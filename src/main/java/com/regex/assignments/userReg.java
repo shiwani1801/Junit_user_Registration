@@ -9,5 +9,10 @@ public class userReg {
         String firstName = scanner.next();
         RegExMain validator = new RegExMain();
         System.out.println(validator.validateFirstName(firstName));
+
+        System.out.println("Enter your last name: ");
+        String lastName = scanner.next();
+        System.out.println(validator.validateLastName(lastName));
+
     }
 }
