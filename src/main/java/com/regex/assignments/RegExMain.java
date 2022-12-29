@@ -12,7 +12,9 @@ public class RegExMain {
     public boolean validateEmail(String email) {
         return Pattern.matches("^[a-z0-9+_.-]+@+[a-z]+.+[a-z]+.+[a-z]$",email);
     }
-
+    public boolean validatePhoneNo(String phoneNo) {
+        return Pattern.matches("^[0-9]{2}[.][0-9]{10}$",phoneNo);
+    }
 
 
 }

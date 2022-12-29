@@ -18,5 +18,8 @@ public class userReg {
         String email = scanner.next();
         System.out.println(validator.validateEmail(email));
 
+        System.out.println("Enter your phoneNo address: ");
+        String phoneNo= scanner.next();
+        System.out.println(validator.validateEmail(phoneNo));
     }
 }
