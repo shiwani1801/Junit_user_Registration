@@ -77,13 +77,13 @@ public class RegExTest {
     @Test
     public void validateEmailWithStartingFirstLetterCapitalShouldFail() {
         System.out.println("Invalid email id of user having starting letter is capital");
-        String emailId = "Sambit 2024@gmail.com";
+        String emailId = "Sambit2024@gmail.com";
         Assert.assertFalse(obj.validateEmail(emailId));
     }
     @Test
     public void validateMobileNoTest() {
         System.out.println("Valid mobile no of user");
-        String phoneNo = "91.9973568343";
+        String phoneNo = "91 9973568343";
         Assert.assertTrue(obj.validatePhoneNo(phoneNo));
     }
 
@@ -107,5 +107,47 @@ public class RegExTest {
         String phoneNo = "+91 65786418112";
         Assert.assertFalse(obj.validatePhoneNo(phoneNo));
     }
+    @Test
+    public void validatePasswordTest() {
+        System.out.println("Valid password of user");
+        String password = "Soumya@123";
+        Assert.assertTrue(obj.validatePassword(password));
+    }
 
+    @Test
+    public void validatePasswordLimitLowerThanEightCharactersShouldFail() {
+        System.out.println("Invalid password of user which contains minimum 8 characters");
+        String password = "Soumya@";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordTestLimitGreaterThanTwentyCharactersShouldFail() {
+        System.out.println("Invalid password of user which contains more than 20 characters");
+        String password = "Soumya@1234567890ghfdc";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordWithoutUpperCaseShouldFail() {
+        System.out.println("Invalid password of user which doesn't contains any upper case");
+        String password = "soumya@123";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordWithoutNumericNumberShouldFail() {
+        System.out.println("Invalid password of user which doesn't contains any upper case");
+        String password = "Soumyars@";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordWithoutSpecialCharacterShouldFail() {
+        System.out.println("Invalid password of user which doesn't contains special character");
+        String password = "Soumya123";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
 }
+
+

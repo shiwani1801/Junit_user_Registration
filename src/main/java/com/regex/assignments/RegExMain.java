@@ -13,8 +13,10 @@ public class RegExMain {
         return Pattern.matches("^[a-z0-9+_.-]+@+[a-z]+.+[a-z]+.+[a-z]$",email);
     }
     public boolean validatePhoneNo(String phoneNo) {
-        return Pattern.matches("^[0-9]{2}[.][0-9]{10}$",phoneNo);
+        return Pattern.matches("^[0-9]{2}[-][0-9]{10}$",phoneNo);
     }
-
+    public boolean validatePassword(String password) {
+        return Pattern.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$",password);
+    }
 
 }

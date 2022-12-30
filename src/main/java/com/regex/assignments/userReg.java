@@ -17,9 +17,13 @@ public class userReg {
         System.out.println("Enter your email address: ");
         String email = scanner.next();
         System.out.println(validator.validateEmail(email));
-
+      scanner.nextLine();
         System.out.println("Enter your phoneNo address: ");
         String phoneNo= scanner.next();
-        System.out.println(validator.validateEmail(phoneNo));
+        System.out.println(validator.validatePhoneNo(phoneNo));
+        scanner.nextLine();
+        System.out.println("Enter your passward address: ");
+        String passward= scanner.next();
+        System.out.println(validator.validatePassword(passward));
     }
 }
